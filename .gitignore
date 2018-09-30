@@ -23,5 +23,6 @@
 hs_err_pid*
 
 #Custom
-forge-*
+forge-*.*-*.*.*.*-*.*
+forge-*.*.*-*.*.*.*-*.*
 CREDITS-fml.txt
