@@ -24,7 +24,9 @@ public class MoreStartItems {
 												"after:forestry;" +
 												"after:galacticraftcore;" +
 												"after:hammercore;" +
+												"after:immersiveengineering;" +
 												"after:industrialforegoing;" +
+												"after:openblocks;" +
 												"after:rftools;" +
 												"after:rftoolscontrol;" +
 												"after:rftoolsdim;" +

@@ -153,6 +153,25 @@ public enum Compat {
 			return "hammercore:manual";
 		}
 	},
+	ImmersiveEngeneering() {
+		@Override
+		public String getModid() {
+			// TODO Auto-generated method stub
+			return "immersiveengineering";
+		}
+		
+		@Override
+		public String getItemName() {
+			// TODO Auto-generated method stub
+			return "immersiveengineering:tool";
+		}
+		
+		@Override
+		public int getItemMeta() {
+			// TODO Auto-generated method stub
+			return 3;
+		}
+	},
 	IndustrialForegoing() {
 		@Override
 		public String getModid() {
@@ -164,6 +183,19 @@ public enum Compat {
 		public String getItemName() {
 			// TODO Auto-generated method stub
 			return "industrialforegoing:book_manual";
+		}
+	},
+	OpenBlocks() {
+		@Override
+		public String getModid() {
+			// TODO Auto-generated method stub
+			return "openblocks";
+		}
+		
+		@Override
+		public String getItemName() {
+			// TODO Auto-generated method stub
+			return "openblocks:info_book";
 		}
 	},
 	RFTools() {
@@ -190,6 +222,20 @@ public enum Compat {
 		public String getItemName() {
 			// TODO Auto-generated method stub
 			return "rftoolscontrol:rftoolscontrol_manual";
+		}
+		
+		@Override
+		public void postInit() {
+			// TODO Auto-generated method stub
+			try {
+				Field f = Class.forName("openblocks.Config").getDeclaredField("spamInfoBook");
+				f.setAccessible(true);
+				f.set(null, false);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+				MoreStartItems.log.catching(e);
+			}
 		}
 	},
 	RFToolsDimensions() {
