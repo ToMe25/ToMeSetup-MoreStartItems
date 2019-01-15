@@ -1,0 +1,16 @@
+[
+{
+  "modid": "morestartitems",
+  "name": "ToMeSetup-MoreStartItems",
+  "description": "an Addon for ToMe25's Setup Mod to add more Start Items.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ToMe25"],
+  "credits": "...",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
