@@ -16,6 +16,8 @@ import javax.tools.ToolProvider;
 
 import com.ToMe.ToMeSetup.api.StartItems.impl.StartItemContainer;
 import com.ToMe.ToMeSetup.api.StartItems.impl.StartItemProvider;
+//import com.google.common.reflect.ClassPath;
+//import com.google.common.reflect.ClassPath.ClassInfo;
 
 import net.minecraftforge.fml.common.Loader;
 
@@ -340,6 +342,45 @@ public enum Compat {
 					//System.out.println(f.getName());
 				//}
 				Field f = Class.forName("com.valkyrieofnight.vlib.m_guide.features.GItems").getDeclaredField("SPAWN_GUIDE_LOGIN");
+				f.setAccessible(true);
+				f.set(null, false);
+			} catch (Exception e) {
+				// TODO: handle exception
+				//e.printStackTrace();
+				//MoreStartItems.log.catching(e);//Ignoring Exceptions because this is only support for old versions.
+			}
+			try {
+				//for(ClassInfo info:ClassPath.from(ClassLoader.getSystemClassLoader()).getTopLevelClassesRecursive("com.valkyrieofnight.vlib")) {
+				//for(ClassInfo info:ClassPath.from(Class.forName("com.valkyrieofnight.vlib.VLib").getClassLoader()).getTopLevelClassesRecursive("com.valkyrieofnight.vlib")) {
+				//for(ClassInfo info:ClassPath.from(Class.forName("com.valkyrieofnight.vlib.VLib").getClassLoader()).getAllClasses()) {
+					//if(!info.getPackageName().contains("com.valkyrieofnight.vlib")) {
+						//System.out.println(info.getPackageName());
+						//continue;
+					//}
+					//try {
+						//for(Field f:info.load().getDeclaredFields()) {
+							//if(f.getType().equals(boolean.class)) {
+								//System.out.println("Found Field " + f.getName());
+								//System.out.println("Found Field " + f.getName() + " in Class " + info.getName() + ".");
+							//}
+						//}
+					//} catch (Exception e) {
+					//} catch (Throwable e) {
+						// TODO: handle exception
+						//MoreStartItems.log.catching(e);
+					//}
+					//for(Field f:info.getClass().getDeclaredFields()) {
+					//for(Field f:info.load().getDeclaredFields()) {
+						//if(f.getType() == boolean.class) {
+						//if(f.getType().equals(boolean.class)) {
+							//System.out.println("Found Field " + f.getName());
+						//}
+						//System.out.println(f.getType());
+						//System.out.println("Found Field " + f.getName());
+					//}
+					//System.out.println("Found Class " + info.getName());
+				//}
+				Field f = Class.forName("com.valkyrieofnight.vliblegacy.m_guide.features.GItems").getDeclaredField("SPAWN_GUIDE_LOGIN");
 				f.setAccessible(true);
 				f.set(null, false);
 			} catch (Exception e) {
